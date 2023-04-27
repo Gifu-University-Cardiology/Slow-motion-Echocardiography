@@ -1,4 +1,4 @@
-# Creating slow-motion echocardiography
+# Creating slow-motion Echocardiography
 - The purpose of repositroy: sharing the codes for creating slow-motion echocardiography
 
 As you know, ischemic heart disease remains a major cause of mortality worldwide, despite a growing body of evidence regarding the development of appropriate treatments and preventive measures. Echocardiography has a pivotal role to diagnose cardiovascular disease, evaluate severity, determine treatment options, and predict prognosis. 
