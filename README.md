@@ -118,7 +118,7 @@ Please note:
 sf indicates how many times the image is to be increased. (e.g. 2,4,8,12)
 slomo-fps specifies the FPS after slow motion is applied ああああああああ
 ```bash
-python image_to_slomo_SF.py
+python video_to_slomo_SF.py
 --ffmpeg_dir path/to/ffmpeg.exe #ffmpeg:https://ffmpeg.org/  Enter apps in this directory
 --extractDir path/to/extract/folder #SuperSloMoを適用したい連番画像(連続する画像の集合)へのパス
 --sf  #the number of increase in frame per second (ex: 4, 8, 12)
