@@ -114,6 +114,9 @@ python create_train_dataset.py
 --width resize image width #specify dataset image size :defalut 640
 --height resize image height
 
+Example
+python create_train_dataset.py
+
 ```
 
 ## Step 2　Training
