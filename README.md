@@ -93,10 +93,10 @@ DICOM Datseset
 inputs
 └── dataset_folder
 ├── train_Dicoms ※Dicomのデータ名は何でもOK
-|   ├── Dicom1
-|   ├── Dicom2
-|   ├── ...
-|
+│   ├── Dicom1
+│   ├── Dicom2
+│   ├── ...
+│
 └── test_Dicoms
    ├── Dicom1
    ├── Dicom2
