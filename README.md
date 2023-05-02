@@ -115,10 +115,66 @@ python create_train_dataset.py
 --height resize image height
 ```
 ```bash
-python create_train_dataset.py --trainDicoms_folder ~/dataset_folder/trainDicoms --testDicoms_folder ~/dataset_folder/test_Dicoms --dataset_folder ~/dataset_folder --width 640 --height 640
+python create_train_dataset.py --trainDicoms_folder dataset_folder/trainDicoms --testDicoms_folder dataset_folder/test_Dicoms --dataset_folder dataset_folder --width 640 --height 640
 ```
 
 ## Step 2　Training
+```bash
+Inputs
+└── dataset_folder
+    ├── train_Dicoms
+    ├── test_Dicoms
+    ├── checkpoint ※checkpointとlogの出力先は各自でフォルダ生成
+    ├── log
+    │　※画像の拡張子は指定なし(create_train_dataset.pyでは、.pngで画像を保存)
+    ├── train 
+    │   ├── 0
+    │   │   ├── frame00
+    │   │   ├── frame01
+    │   │   ├── ...
+    │   │   └── frame12
+    │   │
+    │   ├── 1 
+    │   │   ├── frame00
+    │   │   ├── frame01
+    │   │   ├── ...
+    │   │   └── frame12
+    │   │
+    │   ├── ...
+    │   └── N
+    │
+    ├── test
+    │   ├── 0
+    │   │   ├── frame00
+    │   │   ├── frame01
+    │   │   ├── ...
+    │   │   └── frame12
+    │   │
+    │   ├── 1 
+    │   │   ├── frame00
+    │   │   ├── frame01
+    │   │   ├── ...
+    │   │   └── frame12
+    │   │
+    │   ├── ...
+    │   └── N
+    │
+    └── validation
+        ├── i
+        │   ├── frame00
+        │   ├── frame01
+        │   ├── ...
+        │   └── frame12
+        │
+        ├── j
+        │   ├── frame00
+        │   ├── frame01
+        │   ├── ...
+        │   └── frame12
+        │
+        ├── ...
+        └── N
+```
 ```bash
 python train.py
 
