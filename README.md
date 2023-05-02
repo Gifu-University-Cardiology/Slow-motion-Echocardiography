@@ -115,7 +115,7 @@ python create_train_dataset.py
 --height resize image height
 
 Example
-python create_train_dataset.py
+python create_train_dataset.py --trainDicoms_folder ~/dataset_folder/trainDicoms --testDicoms_folder ~/dataset_folder/test_Dicoms --dataset_folder ~/dataset_folder --width 640 --height 640
 
 ```
 
