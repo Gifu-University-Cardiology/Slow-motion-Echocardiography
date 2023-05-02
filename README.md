@@ -113,10 +113,9 @@ python create_train_dataset.py
 --dataset_folder path/to/output/dataset/folder 
 --width resize image width #specify dataset image size :defalut 640
 --height resize image height
-
-Example
+```
+```bash
 python create_train_dataset.py --trainDicoms_folder ~/dataset_folder/trainDicoms --testDicoms_folder ~/dataset_folder/test_Dicoms --dataset_folder ~/dataset_folder --width 640 --height 640
-
 ```
 
 ## Step 2　Training
