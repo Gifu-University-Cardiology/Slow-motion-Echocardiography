@@ -88,6 +88,21 @@ One subject has normal cardiac function, another has a slight regional wall moti
 Usage Sample
 -----
 Note that the directory, image size should be modified based on each user's setting.
+```bash
+DICOM Datseset
+inputs
+└── dataset_folder
+├── train_Dicoms ※Dicomのデータ名は何でもOK
+|   ├── Dicom1
+|   ├── Dicom2
+|   ├── ...
+|
+└── test_Dicoms
+   ├── Dicom1
+   ├── Dicom2
+   ├── ...
+
+```
 
 ## Step 1　Dataset Preparation
 ```bash
