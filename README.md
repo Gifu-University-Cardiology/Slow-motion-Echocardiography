@@ -196,7 +196,7 @@ python train.py
 python train.py --dataset_root dataset_folder --checkpoint_dir dataset_folder/checkpoint --log_dir dataset_folder/log --width 640 --height 640
 ```
 
-## Step 3 generating slowmotion echocardiography
+## Step 3 Generating slowmotion echocardiography
 ```bash
 inputs
 └── dataset_folder
@@ -231,18 +231,3 @@ python video_to_slomo.py --ffmpeg_dir path/to/ffmpeg --checkpoint dataset_folder
 ```bash
 python video_to_slomo.py --ffmpeg_dir path/to/ffmpeg --checkpoint dataset_folder/checkpoint/SuperSloMo39.ckpt --inputDir DICOM_folder --gpu 0 --sf 8 --outputDir path/to/output/folder --width 640 --height 640
 ```
-
-## Video Converter (ここ以下いります？)
-First, clone this repository, then please do this.
-You can convert any echocardiography video to a slomo or high fps video using [video_to_slomo.py](image_to_slomo_SF.py). Use the command
-
-```bash
-
-# Windows
-python video_to_slomo.py --ffmpeg path\to\folder\containing\ffmpeg --video path\to\video.mp4 --sf N --checkpoint path\to\checkpoint.ckpt --fps M --output path\to\output.mkv
-
-# Linux
-python video_to_slomo.py --video path\to\video.mp4 --sf N --checkpoint path\to\checkpoint.ckpt --fps M --output path\to\output.mkv
-```
-
-
