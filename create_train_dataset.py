@@ -27,7 +27,7 @@ def extractImg(imgYBR,i,left,top,w,h,destPath):
     imgRGB=pydicom.pixel_data_handlers.convert_color_space(imgYBR[i,:,:,],'YBR_FULL_422','RGB')
     pil_img = Image.fromarray(imgRGB)
     im_crop= pil_img.crop((left, top, left+w, top+h))
-    im_crop.save('{}\\{:06}.png'.format(destPath,i))
+    im_crop.save(os.path.join(destPath,'{:06}.png'.format(i)))
 
 # dicomデータから2心拍分のデータを抜き取る
 def extract_frames_dicom(videos, w, h, inDir, outDir):
@@ -100,8 +100,8 @@ def create_clips(root, destination):
                 if (imageCounter + 11 >= len(images)):
                     break
                 folderCounter += 1
-                os.mkdir("{}/{}".format(destination, folderCounter))
-            copy("{}/{}/{}".format(root, file, image), "{}/{}/{}".format(destination, folderCounter, image))
+                os.mkdir(os.path.join(destination, folderCounter))
+            copy(os.path.join(root, file, image), os.path.join(destination, folderCounter, image))
         #rmtree(os.path.join(root, file))
 
 def main():
@@ -147,6 +147,6 @@ def main():
     testClips = os.listdir(testPath)
     indices = random.sample(range(len(testClips)), min(100, int(len(testClips) / 5)))
     for index in indices:
-        move("{}/{}".format(testPath, index), "{}/{}".format(validationPath, index))
+        move(os.path.join(testPath, index), os.path.join(validationPath, index))
 
 main()
