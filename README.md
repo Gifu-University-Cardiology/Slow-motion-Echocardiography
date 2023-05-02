@@ -92,15 +92,15 @@ Note that the directory, image size should be modified based on each user's sett
 DICOM Datseset
 inputs
 └── dataset_folder
-├── train_Dicoms ※Dicomのデータ名は何でもOK
-│   ├── Dicom1
-│   ├── Dicom2
-│   ├── ...
-│
-└── test_Dicoms
-   ├── Dicom1
-   ├── Dicom2
-   ├── ...
+    ├── train_Dicoms ※Dicomのデータ名は何でもOK
+    │   ├── Dicom1
+    │   ├── Dicom2
+    │   ├── ...
+    │
+    └── test_Dicoms
+       ├── Dicom1
+       ├── Dicom2
+       ├── ...
 
 ```
 
@@ -120,7 +120,7 @@ python create_train_dataset.py --trainDicoms_folder dataset_folder/trainDicoms -
 
 ## Step 2　Training
 ```bash
-Inputs
+inputs
 └── dataset_folder
     ├── train_Dicoms
     ├── test_Dicoms
@@ -128,11 +128,12 @@ Inputs
     ├── log
     │　※画像の拡張子は指定なし(create_train_dataset.pyでは、.pngで画像を保存)
     ├── train 
-    │   ├── 0
-    │   │   ├── frame00
-    │   │   ├── frame01
+    │   ├── 0 ※12枚の連番画像をフォルダに保存(画像ファイル名は、ソートした際に時系列順になるようにする。
+    │   │   │　※例　　　　　　　　　　　　　　　ただ、必ずしも0~12の番号で保存する必要はなく、ソートした際に時系列順になれば問題ない）
+    │   │   ├── frame00(000000.png)
+    │   │   ├── frame01(000001.png)
     │   │   ├── ...
-    │   │   └── frame12
+    │   │   └── frame12(000012.png)
     │   │
     │   ├── 1 
     │   │   ├── frame00
@@ -141,6 +142,7 @@ Inputs
     │   │   └── frame12
     │   │
     │   ├── ...
+    │   │
     │   └── N
     │
     ├── test
@@ -157,10 +159,11 @@ Inputs
     │   │   └── frame12
     │   │
     │   ├── ...
+    │   │
     │   └── N
     │
     └── validation
-        ├── i
+        ├── i ※フォルダの数字はランダム
         │   ├── frame00
         │   ├── frame01
         │   ├── ...
@@ -173,6 +176,7 @@ Inputs
         │   └── frame12
         │
         ├── ...
+        │
         └── N
 ```
 ```bash
@@ -184,8 +188,25 @@ python train.py
 --width image width #specify dataset image size :defalut 640
 --height image height
 ```
+```bash
+python train.py --dataset_root dataset_folder --checkpoint_dir dataset_folder/checkpoint --log_dir dataset_folder/log --width 640 --height 640
+```
 
 ## Step 3 generating slowmotion echocardiography
+```bash
+inputs
+└── dataset_folder
+    ├── Video_folder ※動画ファイルの拡張子はなんでもOK
+    │   ├── Video1
+    │   ├── Video2
+    │   ├── ...
+    │
+    └── DICOM_folder
+       ├── DICOM1
+       ├── DICOM2
+       ├── ...
+    
+```
 
 Please note:
 sf indicates how many times the image is to be increased. (e.g. 2,4,8,12)
@@ -193,11 +214,19 @@ slomo-fps specifies the FPS after slow motion is applied あああああああ�
 ```bash
 python video_to_slomo_SF.py
 --ffmpeg_dir path/to/ffmpeg.exe #ffmpeg:https://ffmpeg.org/  Enter apps in this directory
---extractDir path/to/extract/folder #SuperSloMoを適用したい連番画像(連続する画像の集合)へのパス
+--inputDir path/to/input/video or DICOM/folder #SuperSloMoを適用したい連番画像(連続する画像の集合)へのパス
 --sf  #the number of increase in frame per second (ex: 4, 8, 12)
---slomo_fps #frame per seconds after generating Slow Motion video　ああああああああああ
+--fps_magnification # magnificaion of increase fps from original video to slomo video (SloMo動画のFPSを、元の動画のFPSの何倍にするかを決めるためのFPSの増加倍率 例えば、fps_magnificationが2であれば、sloMo動画のFPSを元動画のFPSの2倍にする) default=1
 --outputDir path/to/output/folder #Path for output
 
+```
+#### Video to slomo
+```bash
+python video_to_slomo.py --ffmpeg_dir path/to/ffmpeg --checkpoint dataset_folder/checkpoint/SuperSloMo39.ckpt --inputDir Video_folder --gpu 0 --sf 8 --fps_magnification 2 --outputDir path/to/output/folder --width 640 --height 640
+```
+#### DICOM to slomo
+```bash
+python video_to_slomo.py --ffmpeg_dir path/to/ffmpeg --checkpoint dataset_folder/checkpoint/SuperSloMo39.ckpt --inputDir DICOM_folder --gpu 0 --sf 8 --fps_magnification 2 --outputDir path/to/output/folder --width 640 --height 640 -d
 ```
 
 ## Video Converter
