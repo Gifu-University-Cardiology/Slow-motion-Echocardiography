@@ -21,8 +21,8 @@ For details, see the accompanying paper.<br/>
 
  (Submitted as of May 2023）<br/>
  Development of artificial intelligence-based slow-motion echocardiography and clinical usefulness for evaluating regional wall motion abnormalities
-> [**XXXXXX**](https://XXXXXXXXXXXX)　
-PDFをここにおく<br/>
+> [**XXXXXX**](https://XXXXXXXXXXXX)　(PDF will be uploaded here after acceptance)
+<br/>
 
 
 Authors: <br/>
@@ -53,17 +53,20 @@ This project is implemented for Python 3, and depends on the following packages:
 
 Examples
 --------
-We show examples of our slow-motion echocardiography below. 
-(please see ![Not gif version](https://github.com/YukiSahashi/slowmotion_echocardiography/blob/main/docs/Project_supplemental_figure(2).mp4))
+We show examples of our slow-motion echocardiography below.
+![mp4 version](https://github.com/YukiSahashi/slowmotion_echocardiography/blob/main/docs/Project_supplemental_figure(2).mp4)
 
-- Original (High heart rate due to exercise)　　　　　　　　　　　　　　　
+- Original (High heart rate due to exercise)
+
 ![original](https://user-images.githubusercontent.com/58348086/233840538-467026dc-2241-4bbb-bf3b-a291b2cdf67f.gif)
 
 - 0.25x Slow motion echocardiography (same fps and 4x numbers of frames)
+
 ![0 25](https://user-images.githubusercontent.com/58348086/233840596-b3004af4-484d-4024-b456-f1ebed600244.gif)
 
 
 - 0.125x Slow motion echocardiography (same fps and 8x numbers of frames)
+
 ![0 125](https://user-images.githubusercontent.com/58348086/233840623-93d5d172-0ce1-4e74-8553-f242507ace1b.gif)
 
 
@@ -74,27 +77,27 @@ One subject has normal cardiac function, another has a slight regional wall moti
    - video (Original Stress Echocardiography(Top)  <br/>
    - AI-based 0.25x Slow motion echocardiography (same fps and 4-times numbers of frames) (Left Bottom)  <br/> 
    - Manual 0.25x video (0.25 fps and same frame numbers as original)(Right bottom))
+   
 ![video1](https://user-images.githubusercontent.com/58348086/233838418-a0cf7150-7b70-4ec4-be4c-3c285e1faea6.gif)
 
  - example2 (With Regional Wall motion abnormalities) <br/> 
    - video (Original Stress Echocardiography(Top)  <br/>
    - AI-based 0.25x Slow motion echocardiography (same fps and 4-times numbers of frames) (Left Bottom)  <br/> 
    - Manual 0.25x video (0.25 fps and same frame numbers as original)(Right bottom))    
+
 ![video2](https://user-images.githubusercontent.com/58348086/233838476-a69f2b30-77e6-4ee8-a68f-8670f1ba1f93.gif)
-
-
 
 
 Usage Sample
 -----
 Note that the directory, image size should be modified based on each user's setting.
 ```bash
-DICOM Datseset
+DICOM Dataset
 inputs
 └── dataset_folder
-    ├── train_Dicoms ※Dicomのデータ名は何でもOK
-    │   ├── Dicom1
-    │   ├── Dicom2
+    ├── train_Dicoms
+    │   ├── Dicom1 (xxx.dcm)
+    │   ├── Dicom2 (yyy.dcm)
     │   ├── ...
     │
     └── test_Dicoms
@@ -114,6 +117,7 @@ python create_train_dataset.py
 --width resize image width #specify dataset image size :defalut 640
 --height resize image height
 ```
+
 ```bash
 python create_train_dataset.py --trainDicoms_folder dataset_folder/trainDicoms --testDicoms_folder dataset_folder/test_Dicoms --dataset_folder dataset_folder --width 640 --height 640
 ```
@@ -124,12 +128,11 @@ inputs
 └── dataset_folder
     ├── train_Dicoms
     ├── test_Dicoms
-    ├── checkpoint ※checkpointとlogの出力先は各自でフォルダ生成
+    ├── checkpoint 
     ├── log
-    │　※画像の拡張子は指定なし(create_train_dataset.pyでは、.pngで画像を保存)
+    │
     ├── train 
-    │   ├── 0 ※12枚の連番画像をフォルダに保存(画像ファイル名は、ソートした際に時系列順になるようにする。
-    │   │   │　※例　　　　　　　　　　　　　　　ただ、必ずしも0~12の番号で保存する必要はなく、ソートした際に時系列順になれば問題ない）
+    │   ├── 0 
     │   │   ├── frame00(000000.png)
     │   │   ├── frame01(000001.png)
     │   │   ├── ...
@@ -163,7 +166,7 @@ inputs
     │   └── N
     │
     └── validation
-        ├── i ※フォルダの数字はランダム
+        ├── i 
         │   ├── frame00
         │   ├── frame01
         │   ├── ...
@@ -179,6 +182,7 @@ inputs
         │
         └── N
 ```
+
 ```bash
 python train.py
 
@@ -196,7 +200,7 @@ python train.py --dataset_root dataset_folder --checkpoint_dir dataset_folder/ch
 ```bash
 inputs
 └── dataset_folder
-    ├── Video_folder ※動画ファイルの拡張子はなんでもOK
+    ├── Video_folder
     │   ├── Video1
     │   ├── Video2
     │   ├── ...
@@ -210,26 +214,25 @@ inputs
 
 Please note:
 sf indicates how many times the image is to be increased. (e.g. 2,4,8,12)
-slomo-fps specifies the FPS after slow motion is applied ああああああああ
+
 ```bash
 python video_to_slomo_SF.py
 --ffmpeg_dir path/to/ffmpeg.exe #ffmpeg:https://ffmpeg.org/  Enter apps in this directory
---inputDir path/to/input/video or DICOM/folder #SuperSloMoを適用したい連番画像(連続する画像の集合)へのパス
+--inputDir path/to/input/video or DICOM/folder 
 --sf  #the number of increase in frame per second (ex: 4, 8, 12)
---fps_magnification # magnificaion of increase fps from original video to slomo video (SloMo動画のFPSを、元の動画のFPSの何倍にするかを決めるためのFPSの増加倍率 例えば、fps_magnificationが2であれば、sloMo動画のFPSを元動画のFPSの2倍にする) default=1
 --outputDir path/to/output/folder #Path for output
 
 ```
-#### Video to slomo
+#### (1) Video to slomo
 ```bash
-python video_to_slomo.py --ffmpeg_dir path/to/ffmpeg --checkpoint dataset_folder/checkpoint/SuperSloMo39.ckpt --inputDir Video_folder --gpu 0 --sf 8 --fps_magnification 2 --outputDir path/to/output/folder --width 640 --height 640
+python video_to_slomo.py --ffmpeg_dir path/to/ffmpeg --checkpoint dataset_folder/checkpoint/SuperSloMo39.ckpt --inputDir Video_folder --gpu 0 --sf 8 --outputDir path/to/output/folder --width 640 --height 640
 ```
-#### DICOM to slomo
+#### (2) DICOM to slomo
 ```bash
-python video_to_slomo.py --ffmpeg_dir path/to/ffmpeg --checkpoint dataset_folder/checkpoint/SuperSloMo39.ckpt --inputDir DICOM_folder --gpu 0 --sf 8 --fps_magnification 2 --outputDir path/to/output/folder --width 640 --height 640 -d
+python video_to_slomo.py --ffmpeg_dir path/to/ffmpeg --checkpoint dataset_folder/checkpoint/SuperSloMo39.ckpt --inputDir DICOM_folder --gpu 0 --sf 8 --outputDir path/to/output/folder --width 640 --height 640
 ```
 
-## Video Converter
+## Video Converter (ここ以下いります？)
 First, clone this repository, then please do this.
 You can convert any echocardiography video to a slomo or high fps video using [video_to_slomo.py](image_to_slomo_SF.py). Use the command
 
