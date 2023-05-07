@@ -42,13 +42,15 @@ Please use your own dataset to create the arbitrary-time slow-motion echocardiog
 Model implementation and statistical analysis were performed using the Python (version 3.8) with Pytorch (version. 1.8.0) and R (version. 3.4.1), respectively. Model training was conducted using a graphics processing unit (GeForce Titan RTX 24 GB, NVIDIA, Santa Clara, California).
 
 This project is implemented for Python 3, and depends on the following packages:
+
+（竹下さんへ　使用したパッケージのバージョン書いてほしいです）
   - NumPy
   - PyTorch
   - Torchvision
   - sklearn
   - tqdm
   - tensorflow for tensorboard
-  - etc.
+  - etc.（ほかにもメインどころあれば）
 
 
 Examples
