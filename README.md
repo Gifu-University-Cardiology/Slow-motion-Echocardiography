@@ -44,12 +44,12 @@ Model implementation and statistical analysis were performed using the Python (v
 This project is implemented for Python 3, and depends on the following packages:
 
 （竹下さんへ　使用したパッケージのバージョン書いてほしいです）
-  - NumPy
-  - PyTorch
-  - Torchvision
-  - sklearn
-  - tqdm
-  - tensorflow for tensorboard
+  - NumPy 1.19.2
+  - PyTorch 1.8.0
+  - Torchvision 0.9.0
+  - sklearn 0.24.1
+  - tqdm 4.59.0
+  - tensorflow for tensorboard 2.5.0
   - etc.（ほかにもメインどころあれば）
 
 
