@@ -100,8 +100,9 @@ def create_clips(root, destination):
                 if (imageCounter + 11 >= len(images)):
                     break
                 folderCounter += 1
-                os.mkdir(os.path.join(destination, folderCounter))
-            copy(os.path.join(root, file, image), os.path.join(destination, folderCounter, image))
+                if os.path.exists(os.path.join(destination, str(folderCounter))) == False:
+                    os.mkdir(os.path.join(destination, str(folderCounter)))
+            copy(os.path.join(root, file, image), os.path.join(destination, str(folderCounter), image))
         #rmtree(os.path.join(root, file))
 
 def main():
@@ -147,6 +148,6 @@ def main():
     testClips = os.listdir(testPath)
     indices = random.sample(range(len(testClips)), min(100, int(len(testClips) / 5)))
     for index in indices:
-        move(os.path.join(testPath, index), os.path.join(validationPath, index))
+        move(os.path.join(testPath, str(index)), os.path.join(validationPath, str(index)))
 
 main()
