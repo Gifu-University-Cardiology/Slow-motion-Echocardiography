@@ -76,6 +76,7 @@ We show examples of our slow-motion echocardiography below.
 One subject has normal cardiac function, another has a slight regional wall motion abnormalities.
 
 Please see the following link (mp4)
+![mp4](https://github.com/Gifu-University-Cardiology/Slow-motion-Echocardiography/blob/main/docs/Supplement_Figure3.mp4)
 
 ![image](https://user-images.githubusercontent.com/131949120/237038233-c1b19bab-86f8-48ce-b8e5-1c89f113011e.png)
 
@@ -87,9 +88,6 @@ Please see the following link (mp4)
    - video (Original Stress Echocardiography(Left)  <br/>
    - AI-based 0.25x Slow motion echocardiography (same fps and 4-times numbers of frames) (Right)  <br/> 
    
-
-![video2]()
-
 
 Usage Sample
 -----
