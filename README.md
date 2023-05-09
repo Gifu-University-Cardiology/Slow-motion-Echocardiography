@@ -224,6 +224,8 @@ python video_to_slomo_SF.py
 --outputDir path/to/output/folder #Path for output
 
 ```
+
+(Below: We run the following with the Linux environment)
 #### (1) Video to slomo
 ```bash
 python video_to_slomo.py --ffmpeg_dir path/to/ffmpeg --checkpoint dataset_folder/checkpoint/SuperSloMo39.ckpt --inputDir Video_folder --gpu 0 --sf 8 --outputDir path/to/output/folder --width 640 --height 640
