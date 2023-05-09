@@ -75,19 +75,20 @@ We show examples of our slow-motion echocardiography below.
 
 One subject has normal cardiac function, another has a slight regional wall motion abnormalities.
 
+Please see the following link (mp4)
+
+![image](https://user-images.githubusercontent.com/131949120/237038233-c1b19bab-86f8-48ce-b8e5-1c89f113011e.png)
+
  - example1 (Without Regional Wall motion abnormalities) <br/> 
-   - video (Original Stress Echocardiography(Top)  <br/>
-   - AI-based 0.25x Slow motion echocardiography (same fps and 4-times numbers of frames) (Left Bottom)  <br/> 
-   - Manual 0.25x video (0.25 fps and same frame numbers as original)(Right bottom))
-   
-![video1](https://user-images.githubusercontent.com/58348086/233838418-a0cf7150-7b70-4ec4-be4c-3c285e1faea6.gif)
+   - video (Original Stress Echocardiography(Left)  <br/>
+   - AI-based 0.25x Slow motion echocardiography (same fps and 4-times numbers of frames) (Right)  <br/> 
 
  - example2 (With Regional Wall motion abnormalities) <br/> 
-   - video (Original Stress Echocardiography(Top)  <br/>
-   - AI-based 0.25x Slow motion echocardiography (same fps and 4-times numbers of frames) (Left Bottom)  <br/> 
-   - Manual 0.25x video (0.25 fps and same frame numbers as original)(Right bottom))    
+   - video (Original Stress Echocardiography(Left)  <br/>
+   - AI-based 0.25x Slow motion echocardiography (same fps and 4-times numbers of frames) (Right)  <br/> 
+   
 
-![video2](https://user-images.githubusercontent.com/58348086/233838476-a69f2b30-77e6-4ee8-a68f-8670f1ba1f93.gif)
+![video2]()
 
 
 Usage Sample
