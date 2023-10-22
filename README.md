@@ -52,6 +52,7 @@ This project is implemented for Python 3, and depends on the following packages:
   - tensorflow for tensorboard==2.5.0
   - etc.
 
+Please note: These videos are compressed under 10MB because of github regulations
 
 Examples
 --------
@@ -87,7 +88,10 @@ Please see the following link (mp4)
  - example2 (With Regional Wall motion abnormalities) <br/> 
    - video (Original Stress Echocardiography(Left)  <br/>
    - AI-based 0.25x Slow motion echocardiography (same fps and 4-times numbers of frames) (Right)  <br/> 
-   
+
+ - Compare videos between Slomo and Normal video in the setting of high rate samples (approximately 160-170bpm) (mp4) ![compare_video_hig_rate](https://github.com/Gifu-University-Cardiology/Slow-motion-Echocardiography/assets/131949120/3fc30730-69fd-4a09-b086-8fddb9bb0609)
+
+
 
 Usage Sample
 -----
