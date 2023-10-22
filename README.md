@@ -89,7 +89,9 @@ Please see the following link (mp4)
    - video (Original Stress Echocardiography(Left)  <br/>
    - AI-based 0.25x Slow motion echocardiography (same fps and 4-times numbers of frames) (Right)  <br/> 
 
- - Compare videos between Slomo and Normal video in the setting of high rate samples (approximately 160-170bpm) (mp4) ![compare_video_hig_rate](https://github.com/Gifu-University-Cardiology/Slow-motion-Echocardiography/assets/131949120/3fc30730-69fd-4a09-b086-8fddb9bb0609)
+ - Compare videos between Slomo and Normal video in the setting of high rate samples (approximately 160-170bpm) (gif)![Videotogif](https://github.com/Gifu-University-Cardiology/Slow-motion-Echocardiography/assets/131949120/d2f8f7af-1e1b-414f-ab75-68f1a379f175)
+
+ - (mp4) ![compare_video_hig_rate](https://github.com/Gifu-University-Cardiology/Slow-motion-Echocardiography/assets/131949120/3fc30730-69fd-4a09-b086-8fddb9bb0609)
 
 
 
