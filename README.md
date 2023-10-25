@@ -94,7 +94,9 @@ Please see the following link (mp4)
  - (mp4) ![compare_video_hig_rate](https://github.com/Gifu-University-Cardiology/Slow-motion-Echocardiography/assets/131949120/3fc30730-69fd-4a09-b086-8fddb9bb0609)
 
 - Compare videos between Slomo and Normal video depend on FPS (48FPS vs 203 FPS/ Note: This is compressed video for Github) (gif could not be uploaded because of file size)
-(mp4)![compare FPS mp4](https://github.com/Gifu-University-Cardiology/Slow-motion-Echocardiography/assets/131949120/3bd05e05-551d-4d99-87ed-1a8b7313ff8a)
+(mp4)![compare FPS mp4](https://github.com/Gifu-University-Cardiology/Slow-motion-Echocardiography/assets/131949120/cdab6218-6ce1-49e7-bb0c-e57c61262aa7)
+
+
 
 
 
